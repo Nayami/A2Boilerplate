@@ -1,35 +1,55 @@
 <html>
 <head>
-    <title>Angular 2 QuickStart</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.2.0/material.min.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- 1. Load libraries -->
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="system.config.js"></script>
-    <script>
-        System.import('app').catch(function(err){ console.error(err); });
-    </script>
+	<title>Angular 2 QuickStart</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.2.0/material.min.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- 1. Load libraries -->
+	<!-- Polyfill(s) for older browsers -->
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<!-- 2. Configure SystemJS -->
+	<script src="system.config.js"></script>
+	<script>
+		System.import('app').catch(function (err) {
+			console.error(err);
+		});
+	</script>
 </head>
 
 <body>
 <div class="content-grid mdl-grid">
-    <div class="mdl-cell">
-        <!-- add content here -->
-    </div>
-    <div class="mdl-cell">
-        <app-component>Loading...</app-component>
-    </div>
-    <div class="mdl-cell">
-        <!-- and probably also here -->
-    </div>
+	<div class="mdl-cell">
+		<!-- add content here -->
+	</div>
+	<div class="mdl-cell">
+		<app-component>Loading...</app-component>
+	</div>
+	<div class="mdl-cell">
+		<!-- and probably also here -->
+	</div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.2.0/material.min.js"></script>
+<script>
+	var mdlUpgradeDom = false;
+	setInterval(function () {
+		if (mdlUpgradeDom) {
+			componentHandler.upgradeDom();
+			mdlUpgradeDom = false;
+		}
+	}, 200);
+
+	var observer = new MutationObserver(function () {
+		mdlUpgradeDom = true;
+	});
+	observer.observe(document.body, {
+		childList: true,
+		subtree: true
+	});
+</script>
 </body>
 </html>
