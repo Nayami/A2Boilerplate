@@ -3,11 +3,13 @@ import {Component, OnInit} from '@angular/core';
 @Component({
 	selector: 'app-component',
 	template: `
-		Lorem ipsum dolor sit amet.
+		<custom-attribute></custom-attribute>
 	`,
 })
 
+
 export class AppComponent implements OnInit {
+
 
 	constructor() {
 	}
