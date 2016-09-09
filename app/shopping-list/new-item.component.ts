@@ -14,6 +14,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 		<button (click)="handleAddItem()" type="button" class="mdl-button mdl-js-button mdl-button--raised">Add</button>
 	`
 })
+
 export class NewitemComponent implements OnInit {
 
 	item = {name: '', amount: 0};
