@@ -15,7 +15,6 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 	`
 })
 
-
 export class NewitemComponent implements OnInit {
 
 	item = {name: '', amount: 0};
