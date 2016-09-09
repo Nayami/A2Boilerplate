@@ -18,13 +18,13 @@ import {ListItemInterface} from "./interfaces/item.interface";
 
 export class NewitemComponent implements OnInit {
 
-	item = {name: '', amount: 0};
+	item = {name: '', amount: 0, showEdit: false};
 
 	@Output() addedItem = new EventEmitter<ListItemInterface>();
 
 	handleAddItem(): void {
 		this.addedItem.emit(this.item);
-		this.item = {name: '', amount: 0};
+		this.item = {name: '', amount: 0, showEdit: false};
 	}
 
 	constructor() {}
