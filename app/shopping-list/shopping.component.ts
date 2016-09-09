@@ -13,7 +13,7 @@ import {ListItemInterface} from "./interfaces/item.interface";
 				<li *ngFor="let singleItem of listItems let ind = index">
 					<span>{{singleItem.name}}</span> <span class="mdl-badge" attr.data-badge="{{singleItem.amount}}"></span>
 					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-					<i class="material-icons" (click)="handleEdit(ind)">edit</i>
+					<i class="material-icons" (click)="handleEdit(ind, singleItem)">edit</i>
 					</button>
 					<div [hidden]="singleItem.showEdit === false">
 						<edit-component (raiseDelete)="handleDelete($event)" [passItem]="singleItem"></edit-component>
@@ -35,8 +35,10 @@ export class ShoppingComponent implements OnInit {
 		this.listItems.push({name: item.name, amount: item.amount, showEdit : false});
 	}
 
-	handleEdit (editedItem:number) {
-		this.listItems[editedItem].showEdit = !this.listItems[editedItem].showEdit
+	// Edit Item
+	handleEdit (editedItem:number, actualItem:ListItemInterface) {
+		this.listItems[editedItem].showEdit = !this.listItems[editedItem].showEdit;
+		console.log(actualItem);
 	}
 
 	constructor() {
