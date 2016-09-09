@@ -1,4 +1,5 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {ListItemInterface} from "./interfaces/item.interface";
 
 @Component({
 	selector: 'new-item',
@@ -19,10 +20,11 @@ export class NewitemComponent implements OnInit {
 
 	item = {name: '', amount: 0};
 
-	@Output() addedItem = new EventEmitter<{name: string, amount: number}>();
+	@Output() addedItem = new EventEmitter<ListItemInterface>();
 
 	handleAddItem(): void {
 		this.addedItem.emit(this.item);
+		this.item = {name: '', amount: 0};
 	}
 
 	constructor() {}

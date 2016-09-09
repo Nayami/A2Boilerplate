@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ListItemInterface} from "./interfaces/item.interface";
 
 @Component({
 	selector: 'shopping-component',
@@ -10,7 +11,13 @@ import {Component, OnInit} from '@angular/core';
 			<h3 class="mdl-typography--display-2">My List</h3>
 			<ul>
 				<li *ngFor="let singleItem of listItems">
-					<span>{{singleItem.name}}</span> / <span>{{singleItem.amount}}</span>
+					<span>{{singleItem.name}}</span> <span class="mdl-badge" attr.data-badge="{{singleItem.amount}}">Inbox</span>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
+					<i class="material-icons" (click)="handleEdit(singleItem)">edit</i>
+					</button>{{index}}
+					<div>
+						<edit-component (raiseDelete)="handleDelete($event)" [passItem]="singleItem"></edit-component>
+					</div>
 				</li>
 			</ul>
 		</section>
@@ -18,10 +25,23 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ShoppingComponent implements OnInit {
 
-	listItems = new Array<{name: string, amount: number}>();
+	listItems = new Array<ListItemInterface>();
+	selectedItem : ListItemInterface;
 
-	catchAddedItem(item: {name: string, amount: number}): void {
+	showHideElem (elem):void {
+
+	}
+
+	handleDelete(delItem : ListItemInterface):void {
+		this.listItems.splice(this.listItems.indexOf(delItem), 1);
+	}
+
+	catchAddedItem(item: ListItemInterface): void {
 		this.listItems.push({name: item.name, amount: item.amount});
+	}
+
+	handleEdit (editedItem : ListItemInterface):void {
+		// this.selectedItem = editedItem;
 	}
 
 	constructor() {
