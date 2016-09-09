@@ -3,7 +3,10 @@ import {Component, OnInit} from '@angular/core';
 @Component({
 	selector: 'app-component',
 	template: `
-		Lorem ipsum dolor sit amet.
+		<header class="mdl-typography--display-3">Shopping List</header>
+		<section>
+			<shopping-component></shopping-component>
+		</section>
 	`,
 })
 
