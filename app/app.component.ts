@@ -3,7 +3,8 @@ import {Component, OnInit} from '@angular/core';
 @Component({
 	selector: 'app-component',
 	template: `
-		Lorem ipsum dolor sit amet.
+		<alpha-sibling></alpha-sibling>
+		<beta-sibling></beta-sibling>
 	`,
 })
 
