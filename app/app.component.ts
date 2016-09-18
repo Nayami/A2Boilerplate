@@ -4,6 +4,7 @@ import {Component, OnInit} from '@angular/core';
 	selector: 'app-component',
 	template: `
 		Lorem ipsum dolor sit amet.
+		<animaiton-component></animaiton-component>
 	`,
 })
 

@@ -4,10 +4,11 @@ import {FormsModule} from '@angular/forms';
 
 // Components
 import {AppComponent} from "./app.component";
+import {AnimationComponent} from "./anim.component";
 
 @NgModule({
 	imports: [BrowserModule, FormsModule],
-	declarations: [AppComponent],
+	declarations: [AppComponent, AnimationComponent],
 	bootstrap: [AppComponent]
 })
 
