@@ -38,6 +38,7 @@ export class AnimationComponent implements OnInit {
 		"Obcaecati, voluptatum."
 	];
 	constructor() {
+
 	}
 
 	oncli(elem){
