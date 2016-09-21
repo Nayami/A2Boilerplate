@@ -1,1 +1,41 @@
-<router-outlet></router-outlet>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">Title</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" [routerLink]="['']">Home</a>
+				<a class="mdl-navigation__link" [routerLink]="['/user']">User</a>
+				<a class="mdl-navigation__link" [routerLink]="['/user', 'some']">Some Particular User</a>
+				<a class="mdl-navigation__link" [routerLink]="['/ueser/dummmyparam']">Link to elsewhere</a>
+			</nav>
+		</div>
+	</header>
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">Title</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" [routerLink]="['']">Home</a>
+			<a class="mdl-navigation__link" [routerLink]="['/user']">User</a>
+			<a class="mdl-navigation__link" [routerLink]="['/ueser/dummmyparam']">Link to elsewhere</a>
+		</nav>
+	</div>
+	<main class="mdl-layout__content">
+		<div class="page-content">
+			<div class="content-grid mdl-grid">
+				<div class="mdl-cell mdl-cell--2-col">
+					<!-- add content here -->
+				</div>
+				<div class="mdl-cell mdl-cell--8-col">
+					<router-outlet></router-outlet>
+				</div>
+				<div class="mdl-cell mdl-cell--2-col">
+					<!-- and probably also here -->
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
